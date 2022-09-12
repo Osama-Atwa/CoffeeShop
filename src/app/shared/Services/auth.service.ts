@@ -26,17 +26,19 @@ export class AuthService {
 
     const headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
+    .set('Access-Control-Allow-Origin','*');
 
     let user = {
       email: email,
       password: password
     }
 
-
+    console.log(user);
     //send a post request to the
-    this.httpClient.post(`${this.url}login`, JSON.stringify(user), {headers: headers}).subscribe({
+    this.httpClient.post(`${this.url}auth/login`,JSON.stringify(user),{headers: headers}).subscribe({
       next:(res:any) => {
         //set the token to localStorage
+        console.log(res);
         if(res["token"])
         {
           localStorage.setItem("access_token", res["token"]);
@@ -78,7 +80,7 @@ export class AuthService {
     }
 
     //send a post request to the
-    this.httpClient.post(`${this.url}signup`, JSON.stringify(user), {headers: headers}).subscribe({
+    this.httpClient.post(`${this.url}auth/register`, JSON.stringify(user), {headers: headers}).subscribe({
       next:(res:any) => {
         //set the token to localStorage
         localStorage.setItem("access_token", res["token"]);
