@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { AboutComponent } from './shared/components/about/about.component';
+import { CartService } from './shared/Services/cart.service';
 
 //function that will retrieve the token
 export function tokenGetter() {
@@ -28,7 +29,7 @@ export function tokenGetter() {
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

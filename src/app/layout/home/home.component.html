@@ -3,50 +3,12 @@
   <h1 class="heading"> our <span>menu</span> </h1>
 
   <div class="box-container">
-
-      <div class="box">
-          <img src="../../../assets/img/img1.jpeg" alt="">
-          <h3>French Coffe</h3>
-      <div class="price">20.00EGP <span>35.00EGP</span></div>
-          <a href="#" class="btn">add to cart</a>
-
+      <div class="box" *ngFor="let prod of menu">
+          <img src={{prod.img}} alt="">
+          <h3>{{ prod.name }}</h3>
+      <div class="price">{{prod.price}}$<span>35.00EGP</span></div>
+          <a class="btn" (click)="AddToCart(prod)">Add To Cart</a>
       </div>
-
-      <div class="box">
-          <img src="../../../assets/img/img1.jpeg" alt="">
-          <h3>tasty and healty</h3>
-          <div class="price">20.00EGP <span>35.00EGP</span></div>
-            <a href="#" class="btn">add to cart</a>
-      </div>
-
-      <div class="box">
-          <img src="../../../assets/img/img1.jpeg" alt="">
-          <h3>tasty and healty</h3>
-          <div class="price">20.00EGP <span>35.00EGP</span></div>
-          <a href="#" class="btn">add to cart</a>
-      </div>
-
-      <div class="box">
-          <img src="../../../assets/img/img1.jpeg" alt="">
-          <h3>tasty and healty</h3>
-          <div class="price">20.00EGP <span>35.00EGP</span></div>
-          <a href="#" class="btn">add to cart</a>
-      </div>
-
-      <div class="box">
-          <img src="../../../assets/img/img1.jpeg" alt="">
-          <h3>tasty and healty</h3>
-          <div class="price">20.00EGP <span>35.00EGP</span></div>
-          <a href="#" class="btn">add to cart</a>
-      </div>
-
-      <div class="box">
-          <img src="../../../assets/img/img1.jpeg" alt="">
-          <h3>tasty and healty</h3>
-          <div class="price">20.00EGP <span>35.00EGP</span></div>
-          <a href="#" class="btn">add to cart</a>
-      </div>
-
   </div>
 
 </section>

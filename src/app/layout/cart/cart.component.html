@@ -1,1 +1,36 @@
-<p>cart works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <br>
+      <br>
+      <br>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="cart">
+            <tr *ngFor="let prod of cart;let i = index;">
+              <td>{{ i+1 }}</td>
+              <td>{{ prod.name }}</td>
+              <td><img src={{prod.img}}></td>
+              <td><input type="number" [(ngModel)]="prod.boughtItemsCount"></td>
+              <td>{{ prod.price }}</td>
+            </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Total Price : {{ Total_price() }}</p>
+
+    </div>
+  </div>
+</div>
