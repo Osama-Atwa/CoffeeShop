@@ -1,3 +1,4 @@
+import { FooterComponent } from './footer/footer.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -9,7 +10,7 @@ const routes: Routes = [
     path:'template',
     component:LayoutComponent,
     children:[
-      {path:'',component:HomeComponent},
+      {path:'',component:FooterComponent},
       {path:'home',component:HomeComponent},
     ]
   },
