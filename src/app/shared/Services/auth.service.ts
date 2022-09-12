@@ -25,8 +25,7 @@ export class AuthService {
   public login(email:string, password:string){
 
     const headers = new HttpHeaders()
-    .set('Content-Type', 'application/json')
-    .set('Access-Control-Allow-Origin','*');
+    .set('Content-Type', 'application/json');
 
     let user = {
       email: email,

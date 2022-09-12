@@ -1,7 +1,7 @@
 {
-  "/": {
+  "/auth/*": {
     "target": "https://cafe-app-project.herokuapp.com/",
-    "secure": false,
+    "secure": true,
     "changeOrigin": true
   }
 }
