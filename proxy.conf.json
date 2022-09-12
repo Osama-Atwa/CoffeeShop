@@ -1,6 +1,6 @@
 {
   "/": {
-    "target": "http://localhost:4200/",
+    "target": "https://cafe-app-project.herokuapp.com/",
     "secure": false,
     "changeOrigin": true
   }
