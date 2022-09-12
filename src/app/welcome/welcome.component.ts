@@ -12,4 +12,17 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  myFunction() {
+    let video:any = document.getElementById("myVideo");
+    let btn:any = document.getElementById("myBtn");
+
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = "Pause";
+    } else {
+      video.pause();
+      btn.innerHTML = "Play";
+    }
+  }
 }

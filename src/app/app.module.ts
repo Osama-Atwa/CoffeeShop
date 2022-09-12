@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 //JWT module
 import { JwtModule } from '@auth0/angular-jwt';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { AboutComponent } from './shared/components/about/about.component';
 
 //function that will retrieve the token
 export function tokenGetter() {
@@ -17,7 +19,9 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NotFoundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

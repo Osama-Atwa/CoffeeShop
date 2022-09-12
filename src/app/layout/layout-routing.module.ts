@@ -1,3 +1,5 @@
+import { ProfileComponent } from './profile/profile.component';
+import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,8 +12,10 @@ const routes: Routes = [
     path:'template',
     component:LayoutComponent,
     children:[
-      {path:'',component:FooterComponent},
+      {path:'',component:HomeComponent},
       {path:'home',component:HomeComponent},
+      {path:'cart',component:CartComponent},
+      {path:'profile',component:ProfileComponent}
     ]
   },
 ];

@@ -1,28 +1,49 @@
-
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
-    <div class="container">
-      <a class="navbar-brand" href="#!"><span style="color: #5e9693;">Coffee</span><span style="color: #fff;">EGY</span></a>
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+<div class="row">
+  <div class="col-xs-12">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#!" style="margin-left: 20px;"><span style="color: #5e9693;">Coffee</span><span style="color: #fff;">EGY</span></a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/log/signup" style="justify-content:right;" ><b>Create Account</b></a>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/layout/template/home">Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/log/login" style="justify-content:right;" ><b>Login</b></a>
+            <a class="nav-link" routerLink="/about">
+              About
+            </a>
           </li>
         </ul>
       </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav" >
+          <li class="nav-item">
+            <i class="fa fa-fw fa-home"></i>
+            <a class="nav-link" routerLink="/log/login">
+              Login
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" routerLink="/log/signup">
+              Sign Up
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="row body">
+  <div class="col-xs-12">
+    <video autoplay muted loop id="myVideo">
+      <source src="../../assets/mp4/coffee.MP4" type="video/mp4" >
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="content">
+      <h1>Heading</h1>
+      <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
+      <button id="myBtn" (click)="myFunction()">Pause</button>
     </div>
-  </nav>
-  <section>
-    <div id="intro" class="bg-image vh-100" style="
-          background-image: url('assets/img/img.jpeg');
-        ">
-      <div class="mask" style="background-color: rgba(88, 7, 211, 0.15);"></div>
-    </div>
-  </section>
+
+  </div>
+</div>

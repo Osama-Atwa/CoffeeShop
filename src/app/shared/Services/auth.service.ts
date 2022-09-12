@@ -31,8 +31,6 @@ export class AuthService {
       email: email,
       password: password
     }
-
-    console.log(user);
     //send a post request to the
     this.httpClient.post(`${this.url}auth/login`,JSON.stringify(user),{headers: headers}).subscribe({
       next:(res:any) => {
@@ -41,8 +39,8 @@ export class AuthService {
         if(res["token"])
         {
           localStorage.setItem("access_token", res["token"]);
+          localStorage.setItem("username", res["username"]);
           this.setUserStatus(res["token"]);
-          console.log(res["token"])
           this.router.navigate(["/layout"]);
         }
         else
@@ -59,10 +57,9 @@ export class AuthService {
 
   public logout(){
     //just remove the access token and redirect
-    console.log("user logged out successfully");
     localStorage.removeItem('access_token');
     this.setUserStatus(null);
-    this.router.navigate(["/log/login"]);
+    this.router.navigate(["/welcome"]);
 
   }
 
