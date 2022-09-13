@@ -32,7 +32,7 @@ export class AuthService {
       password: password
     }
     //send a post request to the
-    this.httpClient.post(`${this.url}auth/login`,JSON.stringify(user),{headers: headers}).subscribe({
+    this.httpClient.post(`${this.url}api/auth/login`,JSON.stringify(user),{headers: headers}).subscribe({
       next:(res:any) => {
         //set the token to localStorage
         console.log(res);
@@ -51,7 +51,7 @@ export class AuthService {
         }
       },
       error:()=>{
-        alert("Enternal server error")
+        alert("Wrong Email or Password");
       }
   });
 
@@ -78,7 +78,7 @@ export class AuthService {
     }
 
     //send a post request to the
-    this.httpClient.post(`${this.url}auth/register`, JSON.stringify(user), {headers: headers}).subscribe({
+    this.httpClient.post(`${this.url}api/auth/register`, JSON.stringify(user), {headers: headers}).subscribe({
       next:(res:any) => {
         //set the token to localStorage
         localStorage.setItem("access_token", res["token"]);

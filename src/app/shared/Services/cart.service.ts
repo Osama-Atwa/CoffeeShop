@@ -25,10 +25,16 @@ export class CartService {
   getData(): Observable<any> {
       return this.obs;
   }
+  GetCart(userID:number){
+    const token = localStorage.getItem('access_token')!;
+    const headers = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`);
+    return this.http.get(`${this.url}api/cartproduct/${userID}`,{headers:headers});
+  }
   OnBuy(userID:number,prodID:number){
     const token = localStorage.getItem('access_token')!;
     const headers = new HttpHeaders()
-    .set('token', token);
-    return this.http.delete(`${this.url}cartproduct/${userID}/${prodID}`);
+    .set('Authorization', `Bearer ${token}`);
+    return this.http.delete(`${this.url}api/cartproduct/${userID}/${prodID}`);
   }
 }

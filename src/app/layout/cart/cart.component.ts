@@ -8,16 +8,7 @@ import { product } from 'src/app/shared/Models/product.model';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit ,OnDestroy{
-  cart:product[] = [
-    new product(1,"French Coffe",20,"/assets/img/img1.jpeg",1,2,false,1),
-    new product(2,"French Coffe",20,"/assets/img/img1.jpeg",1,2,false,1),
-    new product(3,"French Coffe",20,"/assets/img/img1.jpeg",1,2,false,1),
-    new product(4,"French Coffe",20,"/assets/img/img1.jpeg",1,2,false,1),
-    new product(5,"French Coffe",20,"/assets/img/img1.jpeg",1,2,false,1),
-    new product(6,"French Coffe",20,"/assets/img/img1.jpeg",1,2,false,1),
-    new product(7,"French Coffe",20,"/assets/img/img1.jpeg",1,2,false,1),
-    new product(8,"French Coffe",20,"/assets/img/img1.jpeg",1,2,false,1),
-  ];
+  cart:product[] = [];
   t_price:number=0;
   constructor(private cartService:CartService) { }
 
@@ -37,6 +28,30 @@ export class CartComponent implements OnInit ,OnDestroy{
     //   // }
     // }
     // );
+
+
+
+    const userID:number = +localStorage.getItem("id")!;
+    this.cartService.GetCart(userID).subscribe({
+      next:(res:any)=>{
+        // console.log(res[0]["product"]["productName"]);
+        //productId
+        //ProductImage
+        //quantity
+        //productPrice
+        for (let index = 0; index < res.length; index++) {
+          debugger;
+          this.cart.push(new product(
+            res[index]["product"]["productId"],res[index]["product"]["productName"],res[index]["product"]["productPrice"],res[index]["product"]["ProductImage"],1,1,true,res[index]["quantity"]
+            ))
+        }
+
+
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    });
   }
   Total_price(){
     this.t_price=0;

@@ -22,7 +22,7 @@ color: black;
 }
 
 .menu .box-container .box .price{
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 2.5rem;
   padding:.5rem 0;
 }
@@ -38,7 +38,7 @@ color: black;
 
 }
 
-.menu .box-container .box:hover > *{
+.menu .box-container .box:hover  *{
   color:var(--black);
 }
 

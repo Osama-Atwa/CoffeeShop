@@ -1,10 +1,5 @@
 {
-  "/auth/*": {
-    "target": "https://cafe-app-project.herokuapp.com/",
-    "secure": true,
-    "changeOrigin": true
-  },
-  "/product/*": {
+  "/api/*": {
     "target": "https://cafe-app-project.herokuapp.com/",
     "secure": true,
     "changeOrigin": true

@@ -44,7 +44,11 @@ export class HomeComponent implements OnInit {
     let CountEle = document.getElementById(String(prod.id)) as HTMLInputElement;
     let count = +CountEle?.value;
     const userID:number = +localStorage.getItem("id")!;
-    this.productService.AddToCart(userID,prod.id,count);
+    this.productService.AddToCart(userID,prod.id,count).subscribe({
+      next:(res)=>{
+        console.log("hello");
+      },
+    });
     prod.isAddedToCart=true;
     alert(`${prod.name} Is Added Successfully`);
   }
