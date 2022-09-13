@@ -9,7 +9,7 @@ background-position: center;
           <img src={{prod.img}} alt="">
           <h3>{{ prod.name }}</h3>
         <div class="price">{{prod.price}}$<span>35.00EGP</span></div>
-        <td ><input type="number" style="margin-left: 80px;" min="1" id="{{prod.id}}"></td>
+        <td ><input type="number" style="margin-left: 90px;" min="1" id="{{prod.id}}"></td>
         <a class="btn" style="margin-top: 10px;"(click)="AddToCart(prod)">Add To Cart</a>
         <a class="btn" [routerLink]="'/layout/template/product/'+prod.id" style="margin-top: 10px; margin-left: 10px;">Details</a>
       </div>

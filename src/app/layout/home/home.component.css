@@ -4,6 +4,7 @@
   display: inline-block;
   width: 400px;
   height: 400px;
+  border-radius: 10%;
 }
 .btn
 {
@@ -33,7 +34,7 @@ color: black;
 }
 
 .menu .box-container .box:hover{
-  background:#FCF3CF ;
+  background:#a49763 ;
 
 }
 
@@ -52,4 +53,8 @@ body {
   background-image: url("../../../assets/img/img.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+input[type=number] {
+  border: none;
+  border-bottom: 2px solid rgb(58, 44, 44);
 }
