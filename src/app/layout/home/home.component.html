@@ -1,3 +1,19 @@
+
+<div *ngIf="!menu.length">
+  <!-- <div class="spinner-border m-5" style="text-align: center;top: 50%; left: 50%;" role="status">
+      <span class="sr-only"></span>
+    </div> -->
+    <div class="body">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+</div>
+<div *ngIf="menu.length">
 <section class="menu" id="menu" style="background-image:url(/assets/img/img.jpeg); background-size: cover;
 background-position: center;
  background-repeat: no-repeat;background-attachment: fixed;">
@@ -16,3 +32,4 @@ background-position: center;
   </div>
 
 </section>
+</div>
