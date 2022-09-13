@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../../assets/img/img.jpeg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-content{
+  background-color: rgb(52, 37, 12);
+  opacity: 0.6;
+  text-align: center;
+  padding: 40px 90px;
+  color: white;
+  position: relative;
+  border-radius: 20px;
+}
+
+.profile-picture{
+  width: 200px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+p{
+  text-align: left;
+  font-size: 20px;
+}

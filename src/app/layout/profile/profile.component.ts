@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  Email:string=localStorage.getItem("email")!;
+  UserName:string=localStorage.getItem("username")!;
   constructor() { }
 
   ngOnInit(): void {
