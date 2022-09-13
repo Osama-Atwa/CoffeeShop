@@ -27,4 +27,16 @@ export class LoginComponent implements OnInit {
     }
     this.authService.login(this.email,this.password);
   }
+  myFunction() {
+    let video:any = document.getElementById("myVideo");
+    let btn:any = document.getElementById("myBtn");
+
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = "Pause";
+    } else {
+      video.pause();
+      btn.innerHTML = "Play";
+    }
+  }
 }

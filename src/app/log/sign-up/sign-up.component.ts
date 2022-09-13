@@ -34,4 +34,16 @@ export class SignUpComponent implements OnInit {
     }
     this.authService.signup(this.email,this.password,this.name);
   }
+  myFunction() {
+    let video:any = document.getElementById("myVideo");
+    let btn:any = document.getElementById("myBtn");
+
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = "Pause";
+    } else {
+      video.pause();
+      btn.innerHTML = "Play";
+    }
+  }
 }
