@@ -1,1 +1,59 @@
-<p>about works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#!" style="margin-left: 20px;"><span style="color: #5e9693;">Coffee</span><span style="color: #fff;">EGY</span></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/layout/template/home">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">
+              About
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav" >
+          <li class="nav-item">
+            <i class="fa fa-fw fa-home"></i>
+            <a class="nav-link" routerLink="/log/login">
+              Login
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" routerLink="/log/signup">
+              Sign Up
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="row body">
+  <div class="col-xs-12">
+    <video autoplay muted loop id="myVideo">
+      <source src="../../assets/mp4/coffee.MP4" type="video/mp4" >
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="content">
+      <h1>CoffeeEGY</h1>
+      <p>We are an American multinational chain of coffeehouses and roastery reserves headquartered in Seattle, Washington. It is the world's largest coffeehouse chain.</p>
+      <p>
+        As of November 2021, the company had 33,833 stores in 80 countries, 15,444 of which were located in the United States.
+        <br> Out of CoffeeEGY' U.S.
+        <br>-based stores, over 8,900 are company-operated, while the remainder are licensed.
+      </p>
+      <p>
+        The rise of the second wave of coffee culture is generally attributed to Starbucks,<br>
+         which introduced a wider variety of coffee experiences. Starbucks serves hot and cold drinks,
+         <br>
+         whole-bean coffee, micro-ground instant coffee, espresso, caffe latte, full and loose-leaf teas, juices, Frappuccino beverages, pastries, and snacks. Some offerings are seasonal, or specific to the locality of the store. Depending on the country, most locations provide free Wi-Fi internet access.
+      </p>
+      <button id="myBtn" (click)="myFunction()">Pause</button>
+    </div>
+  </div>
+</div>

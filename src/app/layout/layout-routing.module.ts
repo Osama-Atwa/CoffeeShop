@@ -1,3 +1,4 @@
+import { ProductComponent } from './product/product.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
       {path:'',component:HomeComponent},
       {path:'home',component:HomeComponent},
       {path:'cart',component:CartComponent},
-      {path:'profile',component:ProfileComponent}
+      {path:'profile',component:ProfileComponent},
+      {path:'product/:id',component:ProductComponent}
     ]
   },
 ];

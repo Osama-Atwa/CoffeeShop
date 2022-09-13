@@ -1,7 +1,7 @@
 import { AboutComponent } from './shared/components/about/about.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { AuthGuard } from './guard/auth.guard';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeComponent } from './shared/components/welcome/welcome.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

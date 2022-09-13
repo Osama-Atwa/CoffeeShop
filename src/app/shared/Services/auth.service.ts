@@ -40,6 +40,7 @@ export class AuthService {
         {
           localStorage.setItem("access_token", res["token"]);
           localStorage.setItem("username", res["username"]);
+          localStorage.setItem("id", res["id"]);
           this.setUserStatus(res["token"]);
           this.router.navigate(["/layout"]);
         }

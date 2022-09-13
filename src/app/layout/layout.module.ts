@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     SidebarComponent,
     CartComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,

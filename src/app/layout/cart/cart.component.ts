@@ -16,15 +16,16 @@ export class CartComponent implements OnInit ,OnDestroy{
     this.cartService.getData().subscribe((prod:product)=>{
       const index = this.cart.findIndex(e => e.id == prod.id);
       debugger;
-      if (index != -1)
-      {
-        this.cart[index].boughtItemsCount += 1;
-        console.log(this.cart[index].boughtItemsCount);
-      }
-      else
-      {
-        this.cart.push(prod);
-      }
+      this.cart.push(prod);
+      // if (index != -1)
+      // {
+      //   this.cart[index].boughtItemsCount += 1;
+      //   console.log(this.cart[index].boughtItemsCount);
+      // }
+      // else
+      // {
+      //   this.cart.push(prod);
+      // }
     }
     );
   }

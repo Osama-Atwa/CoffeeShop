@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" style="text-align: center;">
+    </div>
+    <div class="col-sm-4">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div *ngIf="prod">
+        <div class="card">
+          <img [src]="prod.img" alt="prod.Name" style="width:100%;">
+          <h1>{{prod.name}}</h1>
+          <p class="price">{{prod.price}}$</p>
+          <p>Number of Suger Spoons: {{prod.suger}}</p>
+          <button class="btn" [routerLink]="'/layout/template/home'">Back To Menu</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4" style="text-align: center;">
+    </div>
+  </div>
+</div>

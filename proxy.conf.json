@@ -3,5 +3,10 @@
     "target": "https://cafe-app-project.herokuapp.com/",
     "secure": true,
     "changeOrigin": true
+  },
+  "/product/*": {
+    "target": "https://cafe-app-project.herokuapp.com/",
+    "secure": true,
+    "changeOrigin": true
   }
 }
