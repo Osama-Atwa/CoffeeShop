@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
+ loged:boolean=false;
+ username!:string;
   constructor() { }
 
   ngOnInit(): void {
+    if(localStorage.getItem("access_token")){
+      this.loged = true;
+      this.username = localStorage.getItem("username")!;
+    }
   }
 
 

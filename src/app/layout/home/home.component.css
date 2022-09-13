@@ -44,3 +44,6 @@ color: black;
   background-color: #723d10;
   color: whitesmoke;
 }
+img {
+  border-radius: 30%;
+}

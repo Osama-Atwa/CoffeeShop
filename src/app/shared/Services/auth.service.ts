@@ -73,7 +73,7 @@ export class AuthService {
     let user = {
       email: email,
       password: password,
-      name: name
+      username: name
     }
 
     //send a post request to the

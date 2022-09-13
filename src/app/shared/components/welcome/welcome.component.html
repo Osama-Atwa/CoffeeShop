@@ -14,10 +14,9 @@
           </li>
         </ul>
       </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse justify-content-end" *ngIf="!loged" id="navbarSupportedContent">
         <ul class="navbar-nav" >
           <li class="nav-item">
-            <i class="fa fa-fw fa-home"></i>
             <a class="nav-link" routerLink="/log/login">
               Login
             </a>
@@ -25,6 +24,15 @@
           <li>
             <a class="nav-link" routerLink="/log/signup">
               Sign Up
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" *ngIf="loged" id="navbarSupportedContent">
+        <ul class="navbar-nav" >
+          <li class="nav-item">
+            <a class="nav-link" style="margin-right: 30px;" routerLink="/layout/template/profile">
+                {{ username }}
             </a>
           </li>
         </ul>

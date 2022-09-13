@@ -12,6 +12,7 @@
             <th>Image</th>
             <th>Quantity</th>
             <th>Price</th>
+            <th>Buy</th>
           </tr>
         </thead>
         <tbody *ngIf="cart">
@@ -21,6 +22,7 @@
               <td><img src={{prod.img}}></td>
               <td><input type="number" [(ngModel)]="prod.boughtItemsCount"></td>
               <td>{{ prod.price }}</td>
+              <td><button class="btn btn-success" (click)="OnBuy(prod)">Buy</button></td>
             </tr>
         </tbody>
       </table>
