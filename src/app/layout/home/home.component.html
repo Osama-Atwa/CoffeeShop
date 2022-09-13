@@ -1,7 +1,5 @@
-<section class="menu" id="menu" style="background-image:url(/assets/img/img.jpeg) ;">
 
-  <h1 class="heading"> our <span>menu</span> </h1>
-
+<section class="menu" id="menu" >
   <div class="box-container">
       <div class="box" *ngFor="let prod of menu">
           <img src={{prod.img}} alt="">
@@ -9,8 +7,7 @@
         <div class="price">{{prod.price}}$<span>35.00EGP</span></div>
         <td ><input type="number" style="margin-left: 80px;" min="1" id="{{prod.id}}"></td>
         <a class="btn" style="margin-top: 10px;"(click)="AddToCart(prod)">Add To Cart</a>
-        <br>
-        <a class="btn" [routerLink]="'/layout/template/product/'+prod.id" style="margin-top: 10px;">Details</a>
+        <a class="btn" [routerLink]="'/layout/template/product/'+prod.id" style="margin-top: 10px; margin-left: 10px;">Details</a>
       </div>
   </div>
 
