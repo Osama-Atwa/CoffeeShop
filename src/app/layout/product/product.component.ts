@@ -11,22 +11,20 @@ import { Component, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
   id!: number;
   prod:product=new product(1,"",0,"",1,2,false,1);
+  load:boolean = false;
   // prod!:product;
   constructor(private router:ActivatedRoute,private productService:ProductService) { }
 
   ngOnInit(): void {
     this.router.paramMap.subscribe(params =>{
       this.id = +params.get('id')!;
-      console.log("aaaaaaaaaa");
       this.productService.GetProduct(this.id).subscribe({
         next:(res:any)=>{
-      debugger;
-
           this.prod.img = res["productImage"];
-          console.log(this.prod);
           this.prod.name = res["productName"];
           this.prod.price = res["productPrice"];
           this.prod.suger = res["productSugarSpoon"]
+          this.load = true;
         },
         error:()=>{
           alert("Enternal server Error")

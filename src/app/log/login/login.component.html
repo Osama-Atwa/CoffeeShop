@@ -5,7 +5,7 @@
       <source src="../../assets/mp4/coffee.MP4" type="video/mp4" >
       Your browser does not support HTML5 video.
     </video>
-    <div class="content">
+    <div class="content" *ngIf="!OnloginLoad">
       <a class="navbar-brand" href="/" style="margin-left: 180px;"><span style="color: #5e9693;">Coffee</span><span style="color: #fff;">EGY</span></a>
       <br>
       <br>
@@ -48,6 +48,17 @@
         </div>
       </form>
       <button id="myBtn" (click)="myFunction()">Pause</button>
+    </div>
+    <div *ngIf="OnloginLoad">
+      <div class="body">
+        <div class="loader">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
   </div>
 </div>

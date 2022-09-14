@@ -1,13 +1,15 @@
+<div *ngIf="load">
 <div class="container">
   <div class="row">
     <div class="col-sm-4" style="text-align: center;">
     </div>
     <div class="col-sm-4">
-      <br>
-      <br>
-      <br>
-      <br>
-      <div *ngIf="prod">
+
+
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="card">
           <img [src]="prod.img" alt="prod.Name" style="width:100%;">
           <h1>{{prod.name}}</h1>
@@ -15,9 +17,23 @@
           <p>Number of Suger Spoons: {{prod.suger}}</p>
           <button class="btn" [routerLink]="'/layout/template/home'">Back To Menu</button>
         </div>
-      </div>
+
+
+
     </div>
     <div class="col-sm-4" style="text-align: center;">
+    </div>
+  </div>
+</div>
+</div>
+<div *ngIf="!load">
+  <div class="body">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 </div>
