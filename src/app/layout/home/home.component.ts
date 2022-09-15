@@ -43,6 +43,11 @@ export class HomeComponent implements OnInit {
   {
     let CountEle = document.getElementById(String(prod.id)) as HTMLInputElement;
     let count = +CountEle?.value;
+    if(count<1)
+    {
+      alert("please enter count");
+      return;
+    }
     const userID:number = +localStorage.getItem("id")!;
     this.productService.AddToCart(userID,prod.id,count).subscribe({
       next:(res)=>{

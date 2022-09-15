@@ -45,13 +45,12 @@ export class AuthService {
           this.setUserStatus(res["token"]);
           this.router.navigate(["/layout"]);
         }
-        else
-        {
-          alert("Wrong Email or Password");
-        }
       },
       error:()=>{
+        // this.router.navigate(['/']);
+        window.location.reload()
         alert("Wrong Email or Password");
+
       }
   });
 

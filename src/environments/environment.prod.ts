@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  url:'https://cafe-app-project.herokuapp.com/'
 };

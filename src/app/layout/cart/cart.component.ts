@@ -1,3 +1,4 @@
+import { user } from './../../shared/Models/user.model';
 import { CartService } from './../../shared/Services/cart.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { product } from 'src/app/shared/Models/product.model';
@@ -10,6 +11,7 @@ import { product } from 'src/app/shared/Models/product.model';
 export class CartComponent implements OnInit ,OnDestroy{
   cart:product[] = [];
   t_price:number=0;
+  load:boolean=false;
   constructor(private cartService:CartService) { }
 
   ngOnInit(): void {
@@ -42,10 +44,10 @@ export class CartComponent implements OnInit ,OnDestroy{
         for (let index = 0; index < res.length; index++) {
           debugger;
           this.cart.push(new product(
-            res[index]["product"]["productId"],res[index]["product"]["productName"],res[index]["product"]["productPrice"],res[index]["product"]["ProductImage"],1,1,true,res[index]["quantity"]
+            res[index]["cartProductId"],res[index]["product"]["productName"],res[index]["product"]["productPrice"],res[index]["product"]["ProductImage"],1,1,true,res[index]["quantity"]
             ))
         }
-
+        this.load=true;
 
       },
       error:(err)=>{
@@ -68,10 +70,17 @@ export class CartComponent implements OnInit ,OnDestroy{
   OnBuy(prod:product)
   {
     const userID:number = +localStorage.getItem("id")!;
-    this.cartService.OnBuy(userID,prod.id);
+    // debugger;
+    this.cartService.OnBuy(prod.id);
     const index = this.cart.indexOf(prod, 0);
     if (index > -1) {
       this.cart.splice(index, 1);
     }
+  }
+  OnCheckOut()
+  {
+    const userID:number = +localStorage.getItem("id")!;
+    this.cartService.OnCheckOut(userID);
+    this.cart = [];
   }
 }

@@ -31,10 +31,33 @@ export class CartService {
     .set('Authorization', `Bearer ${token}`);
     return this.http.get(`${this.url}api/cartproduct/${userID}`,{headers:headers});
   }
-  OnBuy(userID:number,prodID:number){
+  OnBuy(prodID:number){
     const token = localStorage.getItem('access_token')!;
     const headers = new HttpHeaders()
     .set('Authorization', `Bearer ${token}`);
-    return this.http.delete(`${this.url}api/cartproduct/${userID}/${prodID}`);
+    // console.log(prodID);
+    return this.http.delete(`${this.url}api/cartproduct/buyproduct/${prodID}`,{headers:headers}).subscribe({
+      next:()=>{
+        debugger;
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    });
+  }
+  OnCheckOut(userID:number)
+  {
+    const token = localStorage.getItem('access_token')!;
+    const headers = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`);
+    // console.log(prodID);
+    return this.http.delete(`${this.url}api/cartproduct/deleteCart/${userID}`,{headers:headers}).subscribe({
+      next:()=>{
+        debugger;
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    });
   }
 }

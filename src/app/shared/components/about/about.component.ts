@@ -6,11 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  loged:boolean=false;
+  username!:string;
+   constructor() { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+   ngOnInit(): void {
+     if(localStorage.getItem("access_token")){
+       this.loged = true;
+       this.username = localStorage.getItem("username")!;
+     }
+   }
   myFunction() {
     let video:any = document.getElementById("myVideo");
     let btn:any = document.getElementById("myBtn");

@@ -1,4 +1,4 @@
-<div *ngIf="!cart.length">
+<div *ngIf="!load">
   <!-- <div class="spinner-border m-5" style="text-align: center;top: 50%; left: 50%;" role="status">
       <span class="sr-only"></span>
     </div> -->
@@ -12,7 +12,7 @@
       </div>
     </div>
 </div>
-<div *ngIf="cart.length">
+<div *ngIf="load">
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -35,19 +35,28 @@
               <td>{{ i+1 }}</td>
               <td>{{ prod.name }}</td>
               <td><img src={{prod.img}}></td>
-              <td><input type="number" [(ngModel)]="prod.boughtItemsCount"></td>
+              <td>
+                <!-- <input type="number" [(ngModel)]="prod.boughtItemsCount"> -->
+                {{ prod.boughtItemsCount }}
+              </td>
               <td>{{ prod.price }}</td>
               <td><button class="btn btn-success" (click)="OnBuy(prod)">Buy</button></td>
             </tr>
         </tbody>
       </table>
 
+
+      <hr>
+      <div class="div"></div><button class="btn btn-success" (click)="OnCheckOut()">Check Out</button>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
       <p>Total Price : {{ Total_price() }}</p>
-
     </div>
   </div>
 </div>
